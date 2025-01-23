@@ -12,7 +12,228 @@
   ```
 - **Example Response:**
   ```json
-  {"success":true,"message":"Recipes fetched successfully.","data":[{"_id":"6405721fa13d0d2d35890d6d","Recipe_id":"2614","Calories":"45.0","cook_time":"5","prep_time":"20","servings":"24","Recipe_title":"Dukkah","total_time":"25","Region":"Middle Eastern","Continent":"African"},{"_id":"64057243a13d0d2d35894c9e","Recipe_id":"47216","Calories":"96.9","cook_time":"0","prep_time":"0","servings":"4","Recipe_title":"Dukkah","total_time":"10","Region":"Middle Eastern","Continent":"African"},{"_id":"64057243a13d0d2d35894ca2","Recipe_id":"47220","Calories":"341.6","cook_time":"0","prep_time":"0","servings":"4 eggs","Recipe_title":"Egyptian Eggs With Dukkah","total_time":"15","Region":"Middle Eastern","Continent":"African"},{"_id":"64057243a13d0d2d35894cee","Recipe_id":"47296","Calories":"141.0","cook_time":"0","prep_time":"0","servings":"1 dip","Recipe_title":"Cousin Pete's Yummiest Dukkah (Nut Dip)","total_time":"25","Region":"Middle Eastern","Continent":"African"},{"_id":"64057243a13d0d2d35894cf7","Recipe_id":"47305","Calories":"260.5","cook_time":"0","prep_time":"0","servings":"4","Recipe_title":"Chargrilled Vegetable and Pita Salad With Feta and Dukkah","total_time":"20","Region":"Middle Eastern","Continent":"African"},{"_id":"64057243a13d0d2d35894d2f","Recipe_id":"47361","Calories":"1007.7","cook_time":"0","prep_time":"0","servings":"2 cups","Recipe_title":"Dukkah","total_time":"20","Region":"Middle Eastern","Continent":"African"},{"_id":"64057245a13d0d2d35895308","Recipe_id":"48859","Calories":"188.2","cook_time":"0","prep_time":"0","servings":"16 balls","Recipe_title":"Labna Balls Rolled in Tunisian Dukkah","total_time":"1470","Region":"Rest Africa","Continent":"African"},{"_id":"64057245a13d0d2d358953b2","Recipe_id":"49029","Calories":"790.2","cook_time":"0","prep_time":"0","servings":"3/4 cup","Recipe_title":"Almond Dukkah","total_time":"22","Region":"Rest Africa","Continent":"African"},{"_id":"6405724aa13d0d2d358957b1","Recipe_id":"50053","Calories":"196.1","cook_time":"0","prep_time":"0","servings":"6","Recipe_title":"Brie With Dukkah","total_time":"20","Region":"Northern Africa","Continent":"African"},{"_id":"6405725ea13d0d2d35897f3d","Recipe_id":"60187","Calories":"277.5","cook_time":"0","prep_time":"0","servings":"6","Recipe_title":"Dukkah","total_time":"30","Region":"Middle Eastern","Continent":"Asian"},{"_id":"64057262a13d0d2d3589840c","Recipe_id":"61418","Calories":"103.2","cook_time":"0","prep_time":"0","servings":"4 1/2 pint jars","Recipe_title":"Darcey's Special Dukkah","total_time":"20","Region":"Middle Eastern","Continent":"Asian"},{"_id":"64057262a13d0d2d3589855c","Recipe_id":"61754","Calories":"76.9","cook_time":"0","prep_time":"0","servings":"24 skewers","Recipe_title":"Chicken Skewers With Dukkah Crust and Balsamic Reduction","total_time":"60","Region":"Middle Eastern","Continent":"Asian"},{"_id":"64057277a13d0d2d3589a553","Recipe_id":"69938","Calories":"2866.2","cook_time":"0","prep_time":"0","servings":"1 jar","Recipe_title":"Dukkah","total_time":"60","Region":"Middle Eastern","Continent":"Asian"},{"_id":"6405727da13d0d2d3589ae5c","Recipe_id":"72252","Calories":"218.3","cook_time":"0","prep_time":"0","servings":"3 cups","Recipe_title":"Dukkah (Spicy Nut Mix for Dipping With Flatbread)","total_time":"35","Region":"Indian Subcontinent","Continent":"Asian"},{"_id":"6405727da13d0d2d3589b020","Recipe_id":"72704","Calories":"239.4","cook_time":"0","prep_time":"0","servings":"8","Recipe_title":"Prawns With Chilli Mayo & Pistachio Dukkah","total_time":"20","Region":"Australian","Continent":"Australasian"},{"_id":"6405727fa13d0d2d3589b559","Recipe_id":"74043","Calories":"5545.7","cook_time":"0","prep_time":"0","servings":"1 loaf","Recipe_title":"Garlic  Dukkah  Bread","total_time":"40","Region":"Australian","Continent":"Australasian"},{"_id":"64057286a13d0d2d3589bf35","Recipe_id":"76569","Calories":"346.9","cook_time":"0","prep_time":"0","servings":"6","Recipe_title":"Dukkah Crusted Lamb, Apricot Salsa, Herb Salad With Chermoula D","total_time":"40","Region":"Australian","Continent":"Australasian"},{"_id":"64057288a13d0d2d3589c355","Recipe_id":"77625","Calories":"260.6","cook_time":"0","prep_time":"0","servings":"4","Recipe_title":"Dukkah Spiced Carrot & Feta Salad","total_time":"40","Region":"Australian","Continent":"Australasian"}]}
+ {
+    "success": true,
+    "message": "Recipes fetched successfully.",
+    "data": [
+        {
+            "_id": "6405721fa13d0d2d35890d6d",
+            "Recipe_id": "2614",
+            "Calories": "45.0",
+            "cook_time": "5",
+            "prep_time": "20",
+            "servings": "24",
+            "Recipe_title": "Dukkah",
+            "total_time": "25",
+            "Region": "Middle Eastern",
+            "Continent": "African"
+        },
+        {
+            "_id": "64057243a13d0d2d35894c9e",
+            "Recipe_id": "47216",
+            "Calories": "96.9",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "4",
+            "Recipe_title": "Dukkah",
+            "total_time": "10",
+            "Region": "Middle Eastern",
+            "Continent": "African"
+        },
+        {
+            "_id": "64057243a13d0d2d35894ca2",
+            "Recipe_id": "47220",
+            "Calories": "341.6",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "4 eggs",
+            "Recipe_title": "Egyptian Eggs With Dukkah",
+            "total_time": "15",
+            "Region": "Middle Eastern",
+            "Continent": "African"
+        },
+        {
+            "_id": "64057243a13d0d2d35894cee",
+            "Recipe_id": "47296",
+            "Calories": "141.0",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "1 dip",
+            "Recipe_title": "Cousin Pete's Yummiest Dukkah (Nut Dip)",
+            "total_time": "25",
+            "Region": "Middle Eastern",
+            "Continent": "African"
+        },
+        {
+            "_id": "64057243a13d0d2d35894cf7",
+            "Recipe_id": "47305",
+            "Calories": "260.5",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "4",
+            "Recipe_title": "Chargrilled Vegetable and Pita Salad With Feta and Dukkah",
+            "total_time": "20",
+            "Region": "Middle Eastern",
+            "Continent": "African"
+        },
+        {
+            "_id": "64057243a13d0d2d35894d2f",
+            "Recipe_id": "47361",
+            "Calories": "1007.7",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "2 cups",
+            "Recipe_title": "Dukkah",
+            "total_time": "20",
+            "Region": "Middle Eastern",
+            "Continent": "African"
+        },
+        {
+            "_id": "64057245a13d0d2d35895308",
+            "Recipe_id": "48859",
+            "Calories": "188.2",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "16 balls",
+            "Recipe_title": "Labna Balls Rolled in Tunisian Dukkah",
+            "total_time": "1470",
+            "Region": "Rest Africa",
+            "Continent": "African"
+        },
+        {
+            "_id": "64057245a13d0d2d358953b2",
+            "Recipe_id": "49029",
+            "Calories": "790.2",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "3/4 cup",
+            "Recipe_title": "Almond Dukkah",
+            "total_time": "22",
+            "Region": "Rest Africa",
+            "Continent": "African"
+        },
+        {
+            "_id": "6405724aa13d0d2d358957b1",
+            "Recipe_id": "50053",
+            "Calories": "196.1",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "6",
+            "Recipe_title": "Brie With Dukkah",
+            "total_time": "20",
+            "Region": "Northern Africa",
+            "Continent": "African"
+        },
+        {
+            "_id": "6405725ea13d0d2d35897f3d",
+            "Recipe_id": "60187",
+            "Calories": "277.5",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "6",
+            "Recipe_title": "Dukkah",
+            "total_time": "30",
+            "Region": "Middle Eastern",
+            "Continent": "Asian"
+        },
+        {
+            "_id": "64057262a13d0d2d3589840c",
+            "Recipe_id": "61418",
+            "Calories": "103.2",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "4 1/2 pint jars",
+            "Recipe_title": "Darcey's Special Dukkah",
+            "total_time": "20",
+            "Region": "Middle Eastern",
+            "Continent": "Asian"
+        },
+        {
+            "_id": "64057262a13d0d2d3589855c",
+            "Recipe_id": "61754",
+            "Calories": "76.9",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "24 skewers",
+            "Recipe_title": "Chicken Skewers With Dukkah Crust and Balsamic Reduction",
+            "total_time": "60",
+            "Region": "Middle Eastern",
+            "Continent": "Asian"
+        },
+        {
+            "_id": "64057277a13d0d2d3589a553",
+            "Recipe_id": "69938",
+            "Calories": "2866.2",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "1 jar",
+            "Recipe_title": "Dukkah",
+            "total_time": "60",
+            "Region": "Middle Eastern",
+            "Continent": "Asian"
+        },
+        {
+            "_id": "6405727da13d0d2d3589ae5c",
+            "Recipe_id": "72252",
+            "Calories": "218.3",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "3 cups",
+            "Recipe_title": "Dukkah (Spicy Nut Mix for Dipping With Flatbread)",
+            "total_time": "35",
+            "Region": "Indian Subcontinent",
+            "Continent": "Asian"
+        },
+        {
+            "_id": "6405727da13d0d2d3589b020",
+            "Recipe_id": "72704",
+            "Calories": "239.4",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "8",
+            "Recipe_title": "Prawns With Chilli Mayo & Pistachio Dukkah",
+            "total_time": "20",
+            "Region": "Australian",
+            "Continent": "Australasian"
+        },
+        {
+            "_id": "6405727fa13d0d2d3589b559",
+            "Recipe_id": "74043",
+            "Calories": "5545.7",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "1 loaf",
+            "Recipe_title": "Garlic  Dukkah  Bread",
+            "total_time": "40",
+            "Region": "Australian",
+            "Continent": "Australasian"
+        },
+        {
+            "_id": "64057286a13d0d2d3589bf35",
+            "Recipe_id": "76569",
+            "Calories": "346.9",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "6",
+            "Recipe_title": "Dukkah Crusted Lamb, Apricot Salsa, Herb Salad With Chermoula D",
+            "total_time": "40",
+            "Region": "Australian",
+            "Continent": "Australasian"
+        },
+        {
+            "_id": "64057288a13d0d2d3589c355",
+            "Recipe_id": "77625",
+            "Calories": "260.6",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "4",
+            "Recipe_title": "Dukkah Spiced Carrot & Feta Salad",
+            "total_time": "40",
+            "Region": "Australian",
+            "Continent": "Australasian"
+        }
+    ]
+}
   ```
 - **Error Handling:**
   - If `recipeName` is not provided:
