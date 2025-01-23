@@ -603,117 +603,346 @@
   - **limit** (integer, optional): Specifies the number of recipes to return per page (default is 10).
 
 **Sample Request**:  
-`GET /api/recipes-calories/calories?minCalories=10&maxCalories=30&limit=10`
+`GET /api/recipe-carbo/recipes-by-carbs?minCarbs=1000&maxCarbs=2000&limit=20`
 
 **Example Response:**
   ```json
-  "success": true,
+ "success": true,
     "message": "Recipes fetched successfully",
     "data": [
         {
-            "_id": "6405721fa13d0d2d35890d8c",
-            "Calories": "10.0",
-            "cook_time": "8",
-            "prep_time": "5",
-            "Recipe_title": "Guinean Okra Sauce",
-            "Region": "Rest Africa",
-            "img_url": "https://images.media-allrecipes.com/images/79591.png"
-        },
-        {
-            "_id": "6405721fa13d0d2d35890d8e",
-            "Calories": "14.0",
-            "cook_time": "20",
-            "prep_time": "10",
-            "Recipe_title": "Best Hot Sauce",
-            "Region": "Rest Africa",
-            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/2513802.jpg"
-        },
-        {
-            "_id": "6405721fa13d0d2d35890e03",
-            "Calories": "10.0",
-            "cook_time": "0",
-            "prep_time": "40",
-            "Recipe_title": "Tunisian Harissa",
-            "Region": "Rest Africa",
-            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/651700.jpg"
-        },
-        {
-            "_id": "6405721fa13d0d2d35890e2d",
-            "Calories": "28.0",
-            "cook_time": "0",
+            "_id": "6405721fa13d0d2d35890e46",
+            "Recipe_id": "2831",
+            "Calories": "72.0",
+            "cook_time": "105",
             "prep_time": "20",
-            "Recipe_title": "Harissa",
+            "servings": "40",
+            "Recipe_title": "Roasted Tikel Gomen",
+            "total_time": "125",
+            "url": "http://allrecipes.com/recipe/246876/roasted-tikel-gomen/",
             "Region": "Rest Africa",
-            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/776212.jpg"
+            "Continent": "African",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/3518516.jpg",
+            "Carbohydrate, by difference (g)": "1773.0965",
+            "Processes": "preheat||drizzle||combine||sprinkle||mix||bake||stirring||season"
         },
         {
-            "_id": "6405721fa13d0d2d35890e40",
-            "Calories": "25.0",
-            "cook_time": "0",
-            "prep_time": "10",
-            "Recipe_title": "Berbere (Ethiopian Spice)",
-            "Region": "Rest Africa",
-            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/2376305.jpg"
-        },
-        {
-            "_id": "6405721fa13d0d2d35890ec9",
-            "Calories": "25.0",
-            "cook_time": "10",
-            "prep_time": "120",
-            "Recipe_title": "Wontons for Wonton Noodle Soup",
+            "_id": "6405721fa13d0d2d35890f4a",
+            "Recipe_id": "3091",
+            "Calories": "161.0",
+            "cook_time": "360",
+            "prep_time": "15",
+            "servings": "6",
+            "Recipe_title": "Peking Pork Chops",
+            "total_time": "375",
+            "url": "http://allrecipes.com/recipe/22219/peking-pork-chops/",
             "Region": "Chinese and Mongolian",
-            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/409196.jpg"
+            "Continent": "Asian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/687851.jpg",
+            "Carbohydrate, by difference (g)": "1058.7611",
+            "Processes": "place||mix||pour||cover||cook||season"
         },
         {
-            "_id": "6405721fa13d0d2d35890ecd",
-            "Calories": "26.0",
+            "_id": "64057221a13d0d2d35891173",
+            "Recipe_id": "3644",
+            "Calories": "385.0",
+            "cook_time": "15",
+            "prep_time": "10",
+            "servings": "4",
+            "Recipe_title": "Vermicelli Pudding",
+            "total_time": "40",
+            "url": "http://allrecipes.com/recipe/228550/vermicelli-pudding/",
+            "Region": "Middle Eastern",
+            "Continent": "Asian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/1207154.jpg",
+            "Carbohydrate, by difference (g)": "1159.3042",
+            "Processes": "boil||simmer||stir||simmer||remove||heat||stand||stir"
+        },
+        {
+            "_id": "64057221a13d0d2d35891222",
+            "Recipe_id": "3819",
+            "Calories": "415.0",
+            "cook_time": "25",
+            "prep_time": "15",
+            "servings": "15",
+            "Recipe_title": "Layali Libnan (Lebanese Nights)",
+            "total_time": "520",
+            "url": "http://allrecipes.com/recipe/34791/layali-libnan-lebanese-nights/",
+            "Region": "Middle Eastern",
+            "Continent": "Asian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/33875.jpg",
+            "Carbohydrate, by difference (g)": "1091.0842",
+            "Processes": "pour||boil||heat||reduce||heat||pour||stream||stirring||stir||cook||remove||stir||cool||cover||refrigerate||heat||heat||stir||cook||remove||stir||stir||add||boil||simmer||remove||heat||cover||chill||serve||spread||cream||sprinkle||cut||serve"
+        },
+        {
+            "_id": "64057221a13d0d2d3589125e",
+            "Recipe_id": "3879",
+            "Calories": "463.0",
+            "cook_time": "45",
+            "prep_time": "15",
+            "servings": "12",
+            "Recipe_title": "Biko",
+            "total_time": "660",
+            "url": "http://allrecipes.com/recipe/151155/biko/",
+            "Region": "Southeast Asian",
+            "Continent": "Asian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/1546028.jpg",
+            "Carbohydrate, by difference (g)": "1178.71",
+            "Processes": "soak||preheat||grease||cook||stirring||pour||stir||boil||bake||cool||cut||serve"
+        },
+        {
+            "_id": "64057221a13d0d2d35891384",
+            "Recipe_id": "4173",
+            "Calories": "51.0",
+            "cook_time": "120",
+            "prep_time": "480",
+            "servings": "96",
+            "Recipe_title": "Spicy Peach Chutney",
+            "total_time": "600",
+            "url": "http://allrecipes.com/recipe/75320/spicy-peach-chutney/",
+            "Region": "Indian Subcontinent",
+            "Continent": "Asian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/1039317.jpg",
+            "Carbohydrate, by difference (g)": "1210.9855",
+            "Processes": "stir||wrap||boil||cook||stir||remove||wipe||seal||process||cover"
+        },
+        {
+            "_id": "64057223a13d0d2d35891575",
+            "Recipe_id": "4670",
+            "Calories": "75.0",
+            "cook_time": "20",
+            "prep_time": "20",
+            "servings": "10",
+            "Recipe_title": "Marian's Pumpkin Soup",
+            "total_time": "40",
+            "url": "http://allrecipes.com/recipe/143010/marians-pumpkin-soup/",
+            "Region": "Indian Subcontinent",
+            "Continent": "Asian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/1070713.jpg",
+            "Carbohydrate, by difference (g)": "1186.2905",
+            "Processes": "melt||heat||add||cook||stir||transfer||stir||cook||remove||heat||stir||transfer||blend||garnish"
+        },
+        {
+            "_id": "64057223a13d0d2d358915b3",
+            "Recipe_id": "4732",
+            "Calories": "142.0",
+            "cook_time": "300",
+            "prep_time": "10",
+            "servings": "6",
+            "Recipe_title": "Korean Slow Cooker Pork Chops",
+            "total_time": "310",
+            "url": "http://allrecipes.com/recipe/90303/korean-slow-cooker-pork-chops/",
+            "Region": "Korean",
+            "Continent": "Asian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/1428275.jpg",
+            "Carbohydrate, by difference (g)": "1007.3848",
+            "Processes": "stir||season||place||cover||cook"
+        },
+        {
+            "_id": "64057223a13d0d2d35891692",
+            "Recipe_id": "4955",
+            "Calories": "256.0",
+            "cook_time": "60",
+            "prep_time": "15",
+            "servings": "24",
+            "Recipe_title": "Butter Mochi",
+            "total_time": "195",
+            "url": "http://allrecipes.com/recipe/174170/butter-mochi/",
+            "Region": "Japanese",
+            "Continent": "Asian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/814285.jpg",
+            "Carbohydrate, by difference (g)": "1027.6838",
+            "Processes": "preheat||grease||whisk||beat||smooth||whisk||stir||scrape||smooth||bake||cool||serve"
+        },
+        {
+            "_id": "64057223a13d0d2d358916fe",
+            "Recipe_id": "5063",
+            "Calories": "920.0",
+            "cook_time": "10",
+            "prep_time": "5",
+            "servings": "6",
+            "Recipe_title": "Tempura Shrimp",
+            "total_time": "135",
+            "url": "http://allrecipes.com/recipe/12834/tempura-shrimp/",
+            "Region": "Japanese",
+            "Continent": "Asian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/1071530.jpg",
+            "Carbohydrate, by difference (g)": "1955.4975",
+            "Processes": "refrigerate||stir||heat||heat||stirring||boil||heat||dip||fry||drain||serve"
+        },
+        {
+            "_id": "64057223a13d0d2d35891751",
+            "Recipe_id": "5146",
+            "Calories": "394.0",
+            "cook_time": "40",
+            "prep_time": "10",
+            "servings": "16",
+            "Recipe_title": "Sweet Rice (Zarda)",
+            "total_time": "50",
+            "url": "http://allrecipes.com/recipe/22750/sweet-rice-zarda/",
+            "Region": "Indian Subcontinent",
+            "Continent": "Asian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/1662003.jpg",
+            "Carbohydrate, by difference (g)": "1400.9035",
+            "Processes": "place||cover||boil||stir||heat||cover||simmer||heat||cook||stir||cover||cook||remove||heat||stir||cream||zest||serve"
+        },
+        {
+            "_id": "64057223a13d0d2d358918d2",
+            "Recipe_id": "5531",
+            "Calories": "116.0",
+            "cook_time": "45",
+            "prep_time": "30",
+            "servings": "64",
+            "Recipe_title": "Kumquat Marmalade",
+            "total_time": "795",
+            "url": "http://allrecipes.com/recipe/46310/kumquat-marmalade/",
+            "Region": "Australian",
+            "Continent": "Australasian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/10074.jpg",
+            "Carbohydrate, by difference (g)": "1909.4044",
+            "Processes": "chop||add||stand||boil||heat||simmer||remove||heat||add||mix||boil||boil||stirring||remove||heat||transfer||process||refrigerate"
+        },
+        {
+            "_id": "64057226a13d0d2d35891a1f",
+            "Recipe_id": "5864",
+            "Calories": "626.0",
             "cook_time": "0",
             "prep_time": "0",
-            "Recipe_title": "Egg Drop Soup II",
-            "Region": "Chinese and Mongolian",
-            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/2918090.jpg"
+            "servings": "4",
+            "Recipe_title": "Southwest BBQ Chicken Tacos",
+            "total_time": "0",
+            "url": "http://allrecipes.com/recipe/255692/southwest-bbq-chicken-tacos/",
+            "Region": "Mexican",
+            "Continent": "Latin American",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/4023537.jpg",
+            "Carbohydrate, by difference (g)": "1062.8344",
+            "Processes": "combine||heat||add||cook||stir||add||cook||heat||top||serve"
         },
         {
-            "_id": "6405721fa13d0d2d35890edf",
-            "Calories": "28.0",
-            "cook_time": "50",
-            "prep_time": "50",
-            "Recipe_title": "Chinese Steamed Buns with BBQ Pork Filling",
-            "Region": "Chinese and Mongolian",
-            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/31733.jpg"
+            "_id": "64057226a13d0d2d35891a2f",
+            "Recipe_id": "5880",
+            "Calories": "436.0",
+            "cook_time": "285",
+            "prep_time": "60",
+            "servings": "36",
+            "Recipe_title": "Sylvia's Pork Tamales",
+            "total_time": "405",
+            "url": "http://allrecipes.com/recipe/235668/sylvias-pork-tamales/",
+            "Region": "Mexican",
+            "Continent": "Latin American",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/1078062.jpg",
+            "Carbohydrate, by difference (g)": "1760.7546",
+            "Processes": "place||cover||simmer||strain||heat||heat||cook||stir||boil||add||boil||drain||cool||blend||smooth||stir||melt||heat||stir||stir||remove||soak||drain||cover||mix||lard||select||spread||fold||fold||place||boil||add||cook||set"
         },
         {
-            "_id": "6405721fa13d0d2d35890ee6",
-            "Calories": "22.0",
-            "cook_time": "0",
+            "_id": "64057226a13d0d2d35891b07",
+            "Recipe_id": "6096",
+            "Calories": "557.0",
+            "cook_time": "35",
+            "prep_time": "30",
+            "servings": "16",
+            "Recipe_title": "Make Ahead Lunch Wraps",
+            "total_time": "65",
+            "url": "http://allrecipes.com/recipe/58246/make-ahead-lunch-wraps/",
+            "Region": "Mexican",
+            "Continent": "Latin American",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/1053890.jpg",
+            "Carbohydrate, by difference (g)": "1021.8721",
+            "Processes": "combine||boil||reduce||heat||cover||simmer||remove||heat||cool||place||rinse||add||mix||transfer||mix||divide||wrap||place||reheat"
+        },
+        {
+            "_id": "64057226a13d0d2d35891bc2",
+            "Recipe_id": "6283",
+            "Calories": "534.0",
+            "cook_time": "5",
             "prep_time": "20",
-            "Recipe_title": "Overnight Chinese Daikon Radish Pickles",
-            "Region": "Chinese and Mongolian",
-            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/199612.jpg"
+            "servings": "8",
+            "Recipe_title": "Refrigerator Lemon Margarita Pie",
+            "total_time": "85",
+            "url": "http://allrecipes.com/recipe/221231/refrigerator-lemon-margarita-pie/",
+            "Region": "Mexican",
+            "Continent": "Latin American",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/874792.jpg",
+            "Carbohydrate, by difference (g)": "1683.2823",
+            "Processes": "mix||press||whisk||stir||boil||heat||stirring||remove||cool||whisk||refrigerate"
         },
         {
-            "_id": "6405721fa13d0d2d35890ef0",
-            "Calories": "16.0",
-            "cook_time": "0",
-            "prep_time": "5",
-            "Recipe_title": "Chinese-Style Five Spice Rub",
-            "Region": "Chinese and Mongolian",
-            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/855861.jpg"
+            "_id": "64057226a13d0d2d35891cd1",
+            "Recipe_id": "6555",
+            "Calories": "496.0",
+            "cook_time": "35",
+            "prep_time": "20",
+            "servings": "10",
+            "Recipe_title": "Raspados de Tamarindo (Tamarind Ices)",
+            "total_time": "55",
+            "url": "http://allrecipes.com/recipe/231800/raspados-de-tamarindo-tamarind-ices/",
+            "Region": "Mexican",
+            "Continent": "Latin American",
+            "img_url": "https://images.media-allrecipes.com/images/79591.png",
+            "Carbohydrate, by difference (g)": "1381.64",
+            "Processes": "place||cover||boil||reduce||heat||simmer||strain||add||place||cook||stir||add||divide||pour||serve"
+        },
+        {
+            "_id": "64057229a13d0d2d35891d51",
+            "Recipe_id": "6683",
+            "Calories": "555.0",
+            "cook_time": "20",
+            "prep_time": "80",
+            "servings": "8",
+            "Recipe_title": "Amazing Southwest Cilantro Lime Mango Grilled Chicken Sandwiches",
+            "total_time": "100",
+            "url": "http://allrecipes.com/recipe/143458/amazing-southwest-cilantro-lime-mango-grilled-chicken-sandwiches/",
+            "Region": "Mexican",
+            "Continent": "Latin American",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/2026889.jpg",
+            "Carbohydrate, by difference (g)": "1226.1741",
+            "Processes": "place||stir||place||pour||seal||coat||refrigerate||combine||cover||refrigerate||prepare||set||whisk||cover||refrigerate||preheat||heat||remove||slice||spread||top"
+        },
+        {
+            "_id": "64057229a13d0d2d35891dde",
+            "Recipe_id": "6824",
+            "Calories": "617.0",
+            "cook_time": "60",
+            "prep_time": "25",
+            "servings": "10",
+            "Recipe_title": "Paella",
+            "total_time": "85",
+            "url": "http://allrecipes.com/recipe/34413/paella/",
+            "Region": "Mexican",
+            "Continent": "Latin American",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/29333.jpg",
+            "Carbohydrate, by difference (g)": "1547.5198",
+            "Processes": "heat||heat||fry||remove||fry||remove||stir||cook||stir||mix||add||cover||simmer||add||simmer||stir||cover||cook"
+        },
+        {
+            "_id": "64057229a13d0d2d35891fea",
+            "Recipe_id": "7348",
+            "Calories": "709.0",
+            "cook_time": "20",
+            "prep_time": "25",
+            "servings": "4",
+            "Recipe_title": "Cheese and Beef Enchiladas",
+            "total_time": "45",
+            "url": "http://allrecipes.com/recipe/213918/cheese-and-beef-enchiladas/",
+            "Region": "Mexican",
+            "Continent": "Latin American",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/990939.jpg",
+            "Carbohydrate, by difference (g)": "1050.893",
+            "Processes": "heat||heat||add||cook||stirring||drain||add||simmer||stirring||sprinkle||place||cover||uncover||sprinkle||bake||serve"
         }
     ]
   ```
 
 **Error Responses:**
-1. **The mincalories is greater than maxcalories:**
+1. **The mincarbs is greater than maxcarbs:**
    - **Status Code:** `400 Bad Request`
    - **Response Body:**
      ```json
      {
-        "success": false,
-        "message": "minCalories cannot be greater than maxCalories"
+         "success": false,
+          "message": "No recipes found in the specified carbohydrate range"
      }
      ```
-
 
 2. **No Recipes Found:**
    - **Status Code:** `200 OK`
@@ -733,7 +962,7 @@
      }
      ```
 **Response Time**
-   `53ms`  
+   `70ms`  
 
 
 ### **5. Get Carbon Footprint of All Ingredients in Recipe** - (Implemented)
