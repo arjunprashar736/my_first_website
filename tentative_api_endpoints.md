@@ -1,69 +1,18 @@
 
 ## **Recipe API Endpoints**
 
-### **1. Search Recipes** - (Implemented)
-- **Endpoint:** `GET /api/recipes/search`
+### **1. Search Recipes by title** - (Implemented)
+- **Endpoint:** `GET api/recipe-bytitle/recipeByTitle`
 - **Query Parameters:**
-  - `recipeName` (string, required): Recipe name or keyword to search for.
-  - `page` (integer, optional, default = 1): Page number for pagination.
-  - `limit` (integer, optional, default = 10): Number of recipes to return per page.
-- **Description:** Search for recipes by name or ingredient. The `recipeName` parameter is used to search for recipes that match the name or contain the specified ingredient. Supports pagination for efficient browsing.
+  - `title` (string, required): Recipe name or title.
+- **Description:** Search for recipes by name/title . The `recipetitle` parameter is used to search for recipes that match the name or contain the specified ingredient.
 - **Example Request:**
   ```
-  GET /api/recipes/search?recipeName=lentil&page=1&limit=2
+  GET /api/recipe-bytitle/recipeByTitle?title=Dukkah)
   ```
 - **Example Response:**
   ```json
-  {
-    "page": 1,
-    "limit": 2,
-    "totalResults": 15,
-    "totalPages": 8,
-    "recipes": [
-      {
-        "_id": "6775291c2b68f56a4408ddab",
-        "Recipe ID": 2657,
-        "ingredient_phrase": "['2 onions , chopped', '2 cloves garlic , minced', '1 teaspoon grated fresh ginger', '6 cups water', '1 cup red lentils', '1 can garbanzo beans , drained', '1 can cannellini beans', '1 can diced tomatoes', '1/2 cup diced carrots', '1/2 cup chopped celery', '1 teaspoon garam masala', '1 1/2 teaspoons ground cardamom', '1/2 teaspoon ground cayenne pepper', '1/2 teaspoon ground cumin', '1 tablespoon olive oil']",
-        "continent": "African",
-        "region": "Northern Africa",
-        "sub_region": "Moroccan",
-        "instructions": "['In large pot saute.', 'The onions, garlic, and ginger in a little olive oil for about 5 minutes. Add the water, lentils, chick peas, white kidney beans, diced tomatoes, carrots, celery, garam masala, cardamom, cayenne pepper and cumin. Bring to a boil for a few minutes then simmer for 1 to 1 1/2 hours or longer, until the lentils are soft. Puree half the soup in a food processor or blender. Return the pureed soup to the pot, stir and enjoy.']",
-        "Recipe Name": "Moroccan Lentil Soup",
-        "Recipe Ingredient": "['cannellini bean', 'garam masala', 'cayenne pepper', 'cumin', 'garlic', 'carrot', 'cardamom', 'red lentil', 'tomato', 'celery', 'water', 'onion', 'garbanzo bean', 'olive oil', 'ginger']",
-        "Total Ingredient": 15,
-        "Available Ingredients": "['cannellini bean', 'cumin', 'garlic', 'carrot', 'red lentil', 'tomato', 'celery', 'water', 'onion', 'garbanzo bean', 'olive oil', 'ginger']",
-        "Available Count": 12,
-        "Not Available Ingredients": "['garam masala', 'cayenne pepper', 'cardamom']",
-        "Not Available Count": 3,
-        "Available Percentage": 80,
-        "Carbon_footprint_sum": 13.26,
-        "Vegetarian_Recipe": 1,
-        "Non_Vegetarian_Recipe": 0,
-        "Miscellaneous_Recipe": 0
-      },
-      {
-        "_id": "6775291c2b68f56a4408ddc5",
-        "Recipe ID": 2683,
-        "ingredient_phrase": "['1/4 cup olive oil', '4 large carrots , chopped', '1 large white onion , finely chopped', '2 teaspoons kosher salt', '2 teaspoons chopped fresh parsley', '1 teaspoon ground black pepper', '1/2 teaspoon ground ginger', '1/2 teaspoon dried tarragon', '1/2 teaspoon cumin', '1 package dry lentils', '1 cup crushed tomatoes', '2 quarts vegetable broth', '1 package spinach', '1 large zucchini , cut into small pieces', '1 pinch salt to taste']",
-        "continent": "African",
-        "region": "Northern Africa",
-        "sub_region": "Moroccan",
-        "instructions": "['Heat 1/4 cup olive oil in a large pot over medium heat. Cook and stir carrots, onion, salt, parsley, black pepper, ginger, tarragon, and cumin in the hot oil until the onion is translucent, 5 to 7 minutes. Stir lentils and tomatoes into the carrot mixture. Pour vegetable broth over the vegetables, stir, and bring to a boil. Reduce heat to low, place a cover on the pot, and simmer until the lentils are tender, 45 to 50 minutes. Stir spinach and zucchini into the broth mixture.', 'Simmer until the zucchini is tender, about 7 minutes more. Remove pot from heat and season soup with salt. Drizzle 1 teaspoon olive oil over the soup before serving.']",
-        "Recipe Name": "Moroccan Lentil Soup with Veggies",
-        "Recipe Ingredient": "['lentil', 'kosher salt', 'black pepper', 'spinach', 'cumin', 'white onion', 'zucchini', 'carrot', 'tomato', 'parsley', 'salt', 'olive oil', 'tarragon', 'vegetable broth', 'ginger']",
-        "Total Ingredient": 15,
-        "Available Ingredients": "['lentil', 'spinach', 'cumin', 'zucchini', 'carrot', 'tomato', 'olive oil', 'vegetable broth', 'ginger']",
-        "Available Count": 9,
-        "Not Available Ingredients": "['kosher salt', 'black pepper', 'white onion', 'parsley', 'salt', 'tarragon']",
-        "Not Available Count": 6,
-        "Available Percentage": 60,
-        "Carbon_footprint_sum": 10.78,
-        "Vegetarian_Recipe": 1,
-        "Non_Vegetarian_Recipe": 0,
-        "Miscellaneous_Recipe": 0
-      }
-    ]
-  }
+  {"success":true,"message":"Recipes fetched successfully.","data":[{"_id":"6405721fa13d0d2d35890d6d","Recipe_id":"2614","Calories":"45.0","cook_time":"5","prep_time":"20","servings":"24","Recipe_title":"Dukkah","total_time":"25","Region":"Middle Eastern","Continent":"African"},{"_id":"64057243a13d0d2d35894c9e","Recipe_id":"47216","Calories":"96.9","cook_time":"0","prep_time":"0","servings":"4","Recipe_title":"Dukkah","total_time":"10","Region":"Middle Eastern","Continent":"African"},{"_id":"64057243a13d0d2d35894ca2","Recipe_id":"47220","Calories":"341.6","cook_time":"0","prep_time":"0","servings":"4 eggs","Recipe_title":"Egyptian Eggs With Dukkah","total_time":"15","Region":"Middle Eastern","Continent":"African"},{"_id":"64057243a13d0d2d35894cee","Recipe_id":"47296","Calories":"141.0","cook_time":"0","prep_time":"0","servings":"1 dip","Recipe_title":"Cousin Pete's Yummiest Dukkah (Nut Dip)","total_time":"25","Region":"Middle Eastern","Continent":"African"},{"_id":"64057243a13d0d2d35894cf7","Recipe_id":"47305","Calories":"260.5","cook_time":"0","prep_time":"0","servings":"4","Recipe_title":"Chargrilled Vegetable and Pita Salad With Feta and Dukkah","total_time":"20","Region":"Middle Eastern","Continent":"African"},{"_id":"64057243a13d0d2d35894d2f","Recipe_id":"47361","Calories":"1007.7","cook_time":"0","prep_time":"0","servings":"2 cups","Recipe_title":"Dukkah","total_time":"20","Region":"Middle Eastern","Continent":"African"},{"_id":"64057245a13d0d2d35895308","Recipe_id":"48859","Calories":"188.2","cook_time":"0","prep_time":"0","servings":"16 balls","Recipe_title":"Labna Balls Rolled in Tunisian Dukkah","total_time":"1470","Region":"Rest Africa","Continent":"African"},{"_id":"64057245a13d0d2d358953b2","Recipe_id":"49029","Calories":"790.2","cook_time":"0","prep_time":"0","servings":"3/4 cup","Recipe_title":"Almond Dukkah","total_time":"22","Region":"Rest Africa","Continent":"African"},{"_id":"6405724aa13d0d2d358957b1","Recipe_id":"50053","Calories":"196.1","cook_time":"0","prep_time":"0","servings":"6","Recipe_title":"Brie With Dukkah","total_time":"20","Region":"Northern Africa","Continent":"African"},{"_id":"6405725ea13d0d2d35897f3d","Recipe_id":"60187","Calories":"277.5","cook_time":"0","prep_time":"0","servings":"6","Recipe_title":"Dukkah","total_time":"30","Region":"Middle Eastern","Continent":"Asian"},{"_id":"64057262a13d0d2d3589840c","Recipe_id":"61418","Calories":"103.2","cook_time":"0","prep_time":"0","servings":"4 1/2 pint jars","Recipe_title":"Darcey's Special Dukkah","total_time":"20","Region":"Middle Eastern","Continent":"Asian"},{"_id":"64057262a13d0d2d3589855c","Recipe_id":"61754","Calories":"76.9","cook_time":"0","prep_time":"0","servings":"24 skewers","Recipe_title":"Chicken Skewers With Dukkah Crust and Balsamic Reduction","total_time":"60","Region":"Middle Eastern","Continent":"Asian"},{"_id":"64057277a13d0d2d3589a553","Recipe_id":"69938","Calories":"2866.2","cook_time":"0","prep_time":"0","servings":"1 jar","Recipe_title":"Dukkah","total_time":"60","Region":"Middle Eastern","Continent":"Asian"},{"_id":"6405727da13d0d2d3589ae5c","Recipe_id":"72252","Calories":"218.3","cook_time":"0","prep_time":"0","servings":"3 cups","Recipe_title":"Dukkah (Spicy Nut Mix for Dipping With Flatbread)","total_time":"35","Region":"Indian Subcontinent","Continent":"Asian"},{"_id":"6405727da13d0d2d3589b020","Recipe_id":"72704","Calories":"239.4","cook_time":"0","prep_time":"0","servings":"8","Recipe_title":"Prawns With Chilli Mayo & Pistachio Dukkah","total_time":"20","Region":"Australian","Continent":"Australasian"},{"_id":"6405727fa13d0d2d3589b559","Recipe_id":"74043","Calories":"5545.7","cook_time":"0","prep_time":"0","servings":"1 loaf","Recipe_title":"Garlic  Dukkah  Bread","total_time":"40","Region":"Australian","Continent":"Australasian"},{"_id":"64057286a13d0d2d3589bf35","Recipe_id":"76569","Calories":"346.9","cook_time":"0","prep_time":"0","servings":"6","Recipe_title":"Dukkah Crusted Lamb, Apricot Salsa, Herb Salad With Chermoula D","total_time":"40","Region":"Australian","Continent":"Australasian"},{"_id":"64057288a13d0d2d3589c355","Recipe_id":"77625","Calories":"260.6","cook_time":"0","prep_time":"0","servings":"4","Recipe_title":"Dukkah Spiced Carrot & Feta Salad","total_time":"40","Region":"Australian","Continent":"Australasian"}]}
   ```
 - **Error Handling:**
   - If `recipeName` is not provided:
