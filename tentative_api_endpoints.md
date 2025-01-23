@@ -5,7 +5,7 @@
 - **Endpoint:** `GET api/recipe-bytitle/recipeByTitle`
 - **Query Parameters:**
   - `title` (string, required): Recipe name or title.
-- **Description:** Search for recipes by name/title . The `recipetitle` parameter is used to search for recipes that match the name or contain the specified ingredient.
+- **Description:** Search for recipes by name/title . The `recipetitle` parameter is used to search for recipes that match the name.
 - **Example Request:**
   ```
   GET /api/recipe-bytitle/recipeByTitle?title=Dukkah)
@@ -240,15 +240,9 @@
   - If `recipeName` is not provided:
     ```json
     {
-      "message": "Recipe name is required"
+       "success": false,
+       "message": "Recipe title is required."
     }
-    ```
-  - If `page` or `limit` parameters are invalid:
-    ```json
-    {
-      "message": "Invalid pagination parameters. Page and limit must be positive integers."
-    }
-    ```
   - If no recipes match the search criteria:
     ```json
     {
@@ -261,170 +255,325 @@
       "message": "Internal Server Error"
     }
     ```
+- **Response time**:
+  `300 ms `
+  
 ---
+### 2. Get Recipe of Day- (Implemented)
 
-### 2. Get Recipe Details - (Implemented)
-
-**Endpoint**: `GET /api/recipes/recipe/:id`
+**Endpoint**: `GET /recipe/recipeofday`
 
 **Parameters**:  
-- `id` (integer): Recipe ID.
+- None.
 
-**Description**: Fetch the detailed information for a specific recipe.
+**Description**: Fetch the detail of any recipe from the Database and list it,changes the recipe when the date changes.
 
 **Sample Request**:  
-`GET /api/recipes/recipe/2610`
+`GET /recipe/recipeofday`
 
 **Example Response**:
 ```json
 {
-   "_id": "6775291c2b68f56a4408dd7c",
-   "Recipe ID": 2610,
-   "ingredient_phrase": "['3 cups water', '1 cup red lentils', '1 roma tomato , quartered', '1 carrot , quartered', '1 small onion , quartered', '4 cloves garlic , quartered', '2 teaspoons ground cumin', '1/2 teaspoon sea salt', '1/2 teaspoon cracked black pepper', '1/4 teaspoon ground coriander']",
-   "continent": "African",
-   "region": "Middle Eastern",
-   "sub_region": "Egyptian",
-   "instructions": "['Place 3 cups water, lentils, tomato, carrot, onion, garlic, and chicken bouillon in a stockpot over medium heat.', 'Cook until vegetables and lentils are softened, 20 to 25 minutes. Remove from heat and cool to lukewarm. Blend vegetable and lentil mixture with an immersion blender until smooth. Stir 1 cup water, cumin, sea salt, pepper, and coriander into soup.', 'Heat over medium heat until warmed.']",
-   "Recipe Name": "Egyptian Lentil Soup",
-   "Recipe Ingredient": "['black pepper', 'cumin', 'garlic', 'sea salt', 'carrot', 'coriander', 'red lentil', 'water', 'onion', 'rom tomato']",
-   "Total Ingredient": 10,
-   "Available Ingredients": "['cumin', 'garlic', 'carrot', 'coriander', 'red lentil', 'water', 'onion', 'rom tomato']",
-   "Available Count": 8,
-   "Not Available Ingredients": "['black pepper', 'sea salt']",
-   "Not Available Count": 2,
-   "Available Percentage": 80,
-   "Carbon_footprint_sum": 5.56,
-   "Vegetarian_Recipe": 1,
-   "Non_Vegetarian_Recipe": 0,
-   "Miscellaneous_Recipe": 0
+   "success": "true",
+    "message": "Recipe fetched successfully.",
+    "payload": {
+        "data": {
+            "_id": "640572b7a13d0d2d3589fb04",
+            "Recipe_id": "91897",
+            "Calories": "2710.2",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "1 loaf",
+            "Recipe_title": "Apricot Banana Bread",
+            "total_time": "72",
+            "url": "http://www.geniuskitchen.com/recipe/apricot-banana-bread-27313",
+            "Region": "Caribbean",
+            "Sub_region": "Rest Caribbean",
+            "Continent": "Latin American",
+            "Source": "Geniuskitchen",
+            "img_url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/27/31/3/picWWB1AP.jpg",
+            "Carbohydrate, by difference (g)": "426.4682",
+            "Energy (kcal)": "3272.378",
+            "Protein (g)": "47.1232",
+            "Total lipid (fat) (g)": "161.8544",
+            "Utensils": "pan||pan",
+            "Processes": "cream||add||mix||mix||add||stir||pour||bake||cool",
+            "vegan": "0.0",
+            "pescetarian": "0.0",
+            "ovo_vegetarian": "0.0",
+            "lacto_vegetarian": "0.0",
+            "ovo_lacto_vegetarian": "0.0"
+        }
+    }
 }
 ```
-
+- **Response time**:
+  `48 ms `
 ---
 
-### 3. Get Carbon Footprint by Ingredient - (Implemented)
+### 3. Get Recipe by Time range - (Implemented)
 
-**Endpoint**: `GET /api/ingredients/:name/carbon-footprint`
+**Endpoint**: `GET /api/recipes/range`
 
 **Parameters**:  
-- `name` (string): Ingredient name.
+- `min` (integer,required): Minimum time.
+- `max` (integer,required): Maximum time.
+- `field` (string, required): Which time (total_time,cook_time,prep_time).
+- `page` (integer, optional,default=1): Page number.
+- `limit` (integer, optional,default=10): Number of instances.
 
-**Description**: Fetch the carbon footprint of a specific ingredient.
+**Description**: Fetch the recipe details filtered by the specific time range.
 
 **Sample Request**:  
-`GET /api/ingredients/onion/carbon-footprint`
+`GET /api/recipes/range?min=15&max=60&field=total_time&page=10&limit=10`
 
 **Example Response**:
 ```json
-{
-   "ingredient": "onion",
-   "carbonFootprint": 0.24
-}
+ "success": true,
+    "page": 10,
+    "totalPages": 6782,
+    "totalResults": 67816,
+    "data": [
+        {
+            "_id": "6405721fa13d0d2d35890e4b",
+            "Recipe_id": "2836",
+            "cook_time": "32",
+            "prep_time": "0",
+            "Recipe_title": "Tikil Gomen (Ethiopian Cabbage)",
+            "total_time": 32,
+            "Region": "Rest Africa",
+            "Sub_region": "Nigerian",
+            "Source": "AllRecipes"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e4c",
+            "Recipe_id": "2837",
+            "cook_time": "0",
+            "prep_time": "20",
+            "Recipe_title": "Iranian _ Persian Salad Shirazi",
+            "total_time": 20,
+            "Region": "Middle Eastern",
+            "Sub_region": "Rest Middle Eastern",
+            "Source": "AllRecipes"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e4e",
+            "Recipe_id": "2839",
+            "cook_time": "35",
+            "prep_time": "20",
+            "Recipe_title": "Lamb and Asparagus Stew",
+            "total_time": 55,
+            "Region": "Middle Eastern",
+            "Sub_region": "Rest Middle Eastern",
+            "Source": "AllRecipes"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e50",
+            "Recipe_id": "2841",
+            "cook_time": "0",
+            "prep_time": "20",
+            "Recipe_title": "Persian-Style Tomato Avocado Salad",
+            "total_time": 20,
+            "Region": "Middle Eastern",
+            "Sub_region": "Rest Middle Eastern",
+            "Source": "AllRecipes"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e51",
+            "Recipe_id": "2842",
+            "cook_time": "0",
+            "prep_time": "20",
+            "Recipe_title": "Shiraz Salad",
+            "total_time": 20,
+            "Region": "Middle Eastern",
+            "Sub_region": "Rest Middle Eastern",
+            "Source": "AllRecipes"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e53",
+            "Recipe_id": "2844",
+            "cook_time": "30",
+            "prep_time": "15",
+            "Recipe_title": "Persian Fesenjun",
+            "total_time": 45,
+            "Region": "Middle Eastern",
+            "Sub_region": "Rest Middle Eastern",
+            "Source": "AllRecipes"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e60",
+            "Recipe_id": "2857",
+            "cook_time": "0",
+            "prep_time": "15",
+            "Recipe_title": "Jarjeer (Arugula) Salad",
+            "total_time": 15,
+            "Region": "Middle Eastern",
+            "Sub_region": "Rest Middle Eastern",
+            "Source": "AllRecipes"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e62",
+            "Recipe_id": "2859",
+            "cook_time": "16",
+            "prep_time": "10",
+            "Recipe_title": "Wheat Flour Halva",
+            "total_time": 46,
+            "Region": "Middle Eastern",
+            "Sub_region": "Rest Middle Eastern",
+            "Source": "AllRecipes"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e63",
+            "Recipe_id": "2860",
+            "cook_time": "35",
+            "prep_time": "10",
+            "Recipe_title": "Eggplant Mirza",
+            "total_time": 60,
+            "Region": "Middle Eastern",
+            "Sub_region": "Rest Middle Eastern",
+            "Source": "AllRecipes"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e64",
+            "Recipe_id": "2861",
+            "cook_time": "15",
+            "prep_time": "15",
+            "Recipe_title": "Iskender Kebab",
+            "total_time": 30,
+            "Region": "Middle Eastern",
+            "Sub_region": "Rest Middle Eastern",
+            "Source": "AllRecipes"
+        }
+    ]
 ```
+- **Response time**: 
+   `440 ms`
 ---
 
-### **4. Get Recipe by Ingredient**(Implemented)
+### **4. Get Recipe by Calories Range**(Implemented)
 
-- **Endpoint:** `GET /api/recipes/by-ingredient`
+- **Endpoint:** `GET /api/recipes-calories/calories`
 
 - **Query Parameters:**
-  - **ingredient** (string, required): Specifies ingredients to include or exclude in the recipes. Use `@` to include, `!` to exclude, and `|` to specify optional ingredients (OR conditions).
+  - **minCalories** (integer, required): The minimum number of calories.
+  - **maxCalories** (integer, required): The maximum number of calories.
   - **page** (integer, optional): Specifies the page number for pagination (default is 1).
   - **limit** (integer, optional): Specifies the number of recipes to return per page (default is 10).
 
-#### **Request Query Format:**
-- **@ingredient**: Specifies that the ingredient must be included in the recipe.
-- **!ingredient**: Specifies that the ingredient must be excluded from the recipe.
-- **|ingredient**: Specifies optional ingredients that can appear in the recipe.
+**Sample Request**:  
+`GET /api/recipes-calories/calories?minCalories=10&maxCalories=30&limit=10`
 
-#### **Example Requests:**
-1. Search for recipes containing `cumin` but excluding `garlic`:
-   ```plaintext
-   GET /api/recipes/by-ingredient?ingredient=@cumin !garlic
-   ```
-2. Search for recipes containing `coriander` but excluding `tomato`, and optionally containing `ginger` or `turmeric`:
-   ```plaintext
-   GET /api/recipes/by-ingredient?ingredient=@coriander !tomato |ginger |turmeric
-   ```
-3. Search for recipes containing `salt` or `pepper`:
-   ```plaintext
-   GET /api/recipes/by-ingredient?ingredient=|salt |pepper
-   ```
-
-#### **Response Format:**
-- **Status Code:** `200 OK`
-- **Response Body:**
+**Example Response:**
   ```json
-  {
-    "page": 1,
-    "limit": 10,
-    "totalResults": 25,
-    "totalPages": 3,
-    "recipes": [
-      {
-        "_id": "6775291c2b68f56a4408dd80",
-        "recipe_id": 2614,
-        "recipe_name": "Dukkah",
-        "recipe_ingredients": [
-          "black pepper", "sea salt", "cumin seed", "coriander seed", "sesame seed", "hazelnut"
-        ],
-        "total_ingredients": 6,
-        "available_ingredients": [
-          "coriander seed", "sesame seed", "hazelnut"
-        ],
-        "available_count": 3,
-        "not_available_ingredients": [
-          "black pepper", "sea salt", "cumin seed"
-        ],
-        "not_available_count": 3,
-        "available_percentage": 50,
-        "continent": "African",
-        "region": "Middle Eastern",
-        "sub_region": "Egyptian",
-        "instructions": [
-          "Preheat the oven to 350 degrees F. Place the hazelnuts on a baking sheet, and bake for about 5 minutes...",
-          "In a dry skillet over medium heat, toast the sesame seeds until light golden brown...",
-          "Process the ingredients and season with salt and pepper, mixing well."
-        ],
-        "carbon_footprint_sum": 2.27,
-        "vegetarian_recipe": true,
-        "non_vegetarian_recipe": false,
-        "miscellaneous_recipe": false
-      }
+  "success": true,
+    "message": "Recipes fetched successfully",
+    "data": [
+        {
+            "_id": "6405721fa13d0d2d35890d8c",
+            "Calories": "10.0",
+            "cook_time": "8",
+            "prep_time": "5",
+            "Recipe_title": "Guinean Okra Sauce",
+            "Region": "Rest Africa",
+            "img_url": "https://images.media-allrecipes.com/images/79591.png"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890d8e",
+            "Calories": "14.0",
+            "cook_time": "20",
+            "prep_time": "10",
+            "Recipe_title": "Best Hot Sauce",
+            "Region": "Rest Africa",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/2513802.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e03",
+            "Calories": "10.0",
+            "cook_time": "0",
+            "prep_time": "40",
+            "Recipe_title": "Tunisian Harissa",
+            "Region": "Rest Africa",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/651700.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e2d",
+            "Calories": "28.0",
+            "cook_time": "0",
+            "prep_time": "20",
+            "Recipe_title": "Harissa",
+            "Region": "Rest Africa",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/776212.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e40",
+            "Calories": "25.0",
+            "cook_time": "0",
+            "prep_time": "10",
+            "Recipe_title": "Berbere (Ethiopian Spice)",
+            "Region": "Rest Africa",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/2376305.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890ec9",
+            "Calories": "25.0",
+            "cook_time": "10",
+            "prep_time": "120",
+            "Recipe_title": "Wontons for Wonton Noodle Soup",
+            "Region": "Chinese and Mongolian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/409196.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890ecd",
+            "Calories": "26.0",
+            "cook_time": "0",
+            "prep_time": "0",
+            "Recipe_title": "Egg Drop Soup II",
+            "Region": "Chinese and Mongolian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/2918090.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890edf",
+            "Calories": "28.0",
+            "cook_time": "50",
+            "prep_time": "50",
+            "Recipe_title": "Chinese Steamed Buns with BBQ Pork Filling",
+            "Region": "Chinese and Mongolian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/31733.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890ee6",
+            "Calories": "22.0",
+            "cook_time": "0",
+            "prep_time": "20",
+            "Recipe_title": "Overnight Chinese Daikon Radish Pickles",
+            "Region": "Chinese and Mongolian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/199612.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890ef0",
+            "Calories": "16.0",
+            "cook_time": "0",
+            "prep_time": "5",
+            "Recipe_title": "Chinese-Style Five Spice Rub",
+            "Region": "Chinese and Mongolian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/855861.jpg"
+        }
     ]
-  }
   ```
 
-#### **Error Responses:**
-1. **Missing Ingredient Parameter:**
+**Error Responses:**
+1. **The mincalories is greater than maxcalories:**
    - **Status Code:** `400 Bad Request`
    - **Response Body:**
      ```json
      {
-       "message": "Ingredient parameter is required."
+        "success": false,
+        "message": "minCalories cannot be greater than maxCalories"
      }
      ```
 
-2. **Invalid Pagination Parameters:**
-   - **Status Code:** `400 Bad Request`
-   - **Response Body:**
-     ```json
-     {
-       "message": "Page and limit must be positive integers."
-     }
-     ```
 
-3. **Ingredient Conflict:**
-   - **Status Code:** `400 Bad Request`
-   - **Response Body:**
-     ```json
-     {
-       "message": "Invalid query: Ingredient(s) cannot be in both AND (@), OR (|), and NOT (!) conditions."
-     }
-     ```
-   - **Description:** This error occurs when an ingredient is specified in multiple conditions (`@`, `!`, `|`).
-
-4. **No Recipes Found:**
+2. **No Recipes Found:**
    - **Status Code:** `200 OK`
    - **Response Body:**
      ```json
@@ -433,16 +582,7 @@
      }
      ```
 
-5. **Pagination Out of Range:**
-   - **Status Code:** `400 Bad Request`
-   - **Response Body:**
-     ```json
-     {
-       "message": "Page number exceeds the total number of pages. Please provide a valid page number."
-     }
-     ```
-
-6. **Internal Server Error:**
+3. **Internal Server Error:**
    - **Status Code:** `500 Internal Server Error`
    - **Response Body:**
      ```json
@@ -450,15 +590,151 @@
        "message": "Internal Server Error"
      }
      ```
+**Response Time**
+   `53ms`  
+   
+### **5. Get Recipe by Carbohydrate Range**(Implemented)
 
-### **Key Points:**
-- **Ingredient with `@`**: Specifies that the ingredient must be included in the recipe (logical AND condition).
-- **Ingredient with `!`**: Specifies that the ingredient must be excluded from the recipe (logical NOT condition).
-- **Ingredient with `|`**: Specifies that the ingredient is optional and can appear in the recipe (logical OR condition).
-- **Case Insensitivity**: The search is case-insensitive for all ingredients.
-- **Pagination**: Results are returned with pagination details: `totalResults`, `totalPages`, `page`, and `limit`.
-- **Conflict**: Conflicts between conditions (`@`, `!`, `|`) will result in an error.
----
+- **Endpoint:** `GET /api/recipe-carbo/recipes-by-carbs`
+
+- **Query Parameters:**
+  - **minCarbs** (integer, required): The minimum number of carbs by gram.
+  - **maxnCarbs** (integer, required): The maximum number of carbs by gram.
+  - **limit** (integer, optional): Specifies the number of recipes to return per page (default is 10).
+
+**Sample Request**:  
+`GET /api/recipes-calories/calories?minCalories=10&maxCalories=30&limit=10`
+
+**Example Response:**
+  ```json
+  "success": true,
+    "message": "Recipes fetched successfully",
+    "data": [
+        {
+            "_id": "6405721fa13d0d2d35890d8c",
+            "Calories": "10.0",
+            "cook_time": "8",
+            "prep_time": "5",
+            "Recipe_title": "Guinean Okra Sauce",
+            "Region": "Rest Africa",
+            "img_url": "https://images.media-allrecipes.com/images/79591.png"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890d8e",
+            "Calories": "14.0",
+            "cook_time": "20",
+            "prep_time": "10",
+            "Recipe_title": "Best Hot Sauce",
+            "Region": "Rest Africa",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/2513802.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e03",
+            "Calories": "10.0",
+            "cook_time": "0",
+            "prep_time": "40",
+            "Recipe_title": "Tunisian Harissa",
+            "Region": "Rest Africa",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/651700.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e2d",
+            "Calories": "28.0",
+            "cook_time": "0",
+            "prep_time": "20",
+            "Recipe_title": "Harissa",
+            "Region": "Rest Africa",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/776212.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890e40",
+            "Calories": "25.0",
+            "cook_time": "0",
+            "prep_time": "10",
+            "Recipe_title": "Berbere (Ethiopian Spice)",
+            "Region": "Rest Africa",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/2376305.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890ec9",
+            "Calories": "25.0",
+            "cook_time": "10",
+            "prep_time": "120",
+            "Recipe_title": "Wontons for Wonton Noodle Soup",
+            "Region": "Chinese and Mongolian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/409196.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890ecd",
+            "Calories": "26.0",
+            "cook_time": "0",
+            "prep_time": "0",
+            "Recipe_title": "Egg Drop Soup II",
+            "Region": "Chinese and Mongolian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/2918090.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890edf",
+            "Calories": "28.0",
+            "cook_time": "50",
+            "prep_time": "50",
+            "Recipe_title": "Chinese Steamed Buns with BBQ Pork Filling",
+            "Region": "Chinese and Mongolian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/31733.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890ee6",
+            "Calories": "22.0",
+            "cook_time": "0",
+            "prep_time": "20",
+            "Recipe_title": "Overnight Chinese Daikon Radish Pickles",
+            "Region": "Chinese and Mongolian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/199612.jpg"
+        },
+        {
+            "_id": "6405721fa13d0d2d35890ef0",
+            "Calories": "16.0",
+            "cook_time": "0",
+            "prep_time": "5",
+            "Recipe_title": "Chinese-Style Five Spice Rub",
+            "Region": "Chinese and Mongolian",
+            "img_url": "https://images.media-allrecipes.com/userphotos/250x250/855861.jpg"
+        }
+    ]
+  ```
+
+**Error Responses:**
+1. **The mincalories is greater than maxcalories:**
+   - **Status Code:** `400 Bad Request`
+   - **Response Body:**
+     ```json
+     {
+        "success": false,
+        "message": "minCalories cannot be greater than maxCalories"
+     }
+     ```
+
+
+2. **No Recipes Found:**
+   - **Status Code:** `200 OK`
+   - **Response Body:**
+     ```json
+     {
+       "message": "No recipes found."
+     }
+     ```
+
+3. **Internal Server Error:**
+   - **Status Code:** `500 Internal Server Error`
+   - **Response Body:**
+     ```json
+     {
+       "message": "Internal Server Error"
+     }
+     ```
+**Response Time**
+   `53ms`  
+
 
 ### **5. Get Carbon Footprint of All Ingredients in Recipe** - (Implemented)
 
