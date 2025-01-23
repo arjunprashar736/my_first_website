@@ -13,7 +13,31 @@
 - **Example Response:**
   ```json
  
-      
+    "success": true,
+    "message": "Recipes fetched successfully.",
+    "data": [
+        {
+            "_id": "6405721fa13d0d2d35890d6d",
+            "Recipe_id": "2614",
+            "Calories": "45.0",
+            "cook_time": "5",
+            "prep_time": "20",
+            "servings": "24",
+            "Recipe_title": "Dukkah",
+            "total_time": "25",
+            "Region": "Middle Eastern",
+            "Continent": "African"
+        },
+        {
+            "_id": "64057243a13d0d2d35894c9e",
+            "Recipe_id": "47216",
+            "Calories": "96.9",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "4",
+            "Recipe_title": "Dukkah",
+            "total_time": "10",
+            "Region": "Middle Eastern",
             "Continent": "African"
         },
         {
