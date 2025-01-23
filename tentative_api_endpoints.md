@@ -235,7 +235,7 @@
     ]
 
 {
-  ```
+  ```json
 - **Error Handling:**
   - If `recipeName` is not provided:
     ```json
