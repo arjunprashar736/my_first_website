@@ -4963,6 +4963,179 @@
 **Response Time**
    `200ms` 
 
+### **17. Get Recipe by ingredients**(Implemented)
+
+- **Endpoint:** `GET /api/recipebyingredient/by-ingredients`
+
+- **Query Parameters:**
+  - **include** (string, optional): The ingredients to include in recipe.
+  - **exclude** (string, optional): The ingredients to exclude in recipe.
+  - **limit** (integer, optional): The limit of number of responses (by default 10).
+
+**Sample Request**:  
+`GET /api/recipebyingredient/by-ingredients?include=&exclude=chicken&limit=5`
+
+**Example Response:**
+  ```json
+ "success": true,
+    "message": "Recipes fetched successfully",
+    "data": [
+        {
+            "_id": "6405722ea13d0d2d35892a41",
+            "Recipe_id": "10000",
+            "Calories": "101.0",
+            "cook_time": "180",
+            "prep_time": "5",
+            "servings": "12",
+            "Recipe_title": "Sweet Honey French Bread",
+            "total_time": "185",
+            "url": "http://allrecipes.com/recipe/6818/sweet-honey-french-bread/",
+            "Region": "French",
+            "Sub_region": "French",
+            "Continent": "European",
+            "Source": "AllRecipes",
+            "img_url": "https://images.media-allrecipes.com/userphotos/560x315/344371.jpg",
+            "Carbohydrate, by difference (g)": "201.5316",
+            "Energy (kcal)": "1079.536",
+            "Protein (g)": "32.8252",
+            "Total lipid (fat) (g)": "13.5484",
+            "Processes": "add||drizzle",
+            "vegan": "0.0",
+            "pescetarian": "0.0",
+            "ovo_vegetarian": "0.0",
+            "lacto_vegetarian": "0.0",
+            "ovo_lacto_vegetarian": "0.0"
+        },
+        {
+            "_id": "640572c5a13d0d2d358a1aa2",
+            "Recipe_id": "100000",
+            "Calories": "272.8",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "06-Aug",
+            "Recipe_title": "Southwestern Beef Brisket",
+            "total_time": "205",
+            "url": "http://www.geniuskitchen.com/recipe/southwestern-beef-brisket-77780",
+            "Region": "South American",
+            "Sub_region": "Argentine",
+            "Continent": "Latin American",
+            "Source": "Geniuskitchen",
+            "img_url": "https://geniuskitchen.sndimg.com/gk/img/gk-shareGraphic.png",
+            "Carbohydrate, by difference (g)": "44.9113",
+            "Energy (kcal)": "1245.2023",
+            "Protein (g)": "99.6934",
+            "Total lipid (fat) (g)": "73.941",
+            "Processes": "season||heat||drain||combine||pour||cover||add||bake||remove||skim||reduce||slice||serve",
+            "vegan": "0.0",
+            "pescetarian": "0.0",
+            "ovo_vegetarian": "0.0",
+            "lacto_vegetarian": "0.0",
+            "ovo_lacto_vegetarian": "0.0"
+        },
+        {
+            "_id": "640572c5a13d0d2d358a1aa3",
+            "Recipe_id": "100001",
+            "Calories": "465.8",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "4",
+            "Recipe_title": "Crushed Heirloom Potatoes",
+            "total_time": "30",
+            "url": "http://www.geniuskitchen.com/recipe/crushed-heirloom-potatoes-218673",
+            "Region": "South American",
+            "Sub_region": "Argentine",
+            "Continent": "Latin American",
+            "Source": "Geniuskitchen",
+            "img_url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/21/86/73/picnyIJ9c.jpg",
+            "Carbohydrate, by difference (g)": "185.4988",
+            "Energy (kcal)": "917.3564",
+            "Protein (g)": "38.374",
+            "Total lipid (fat) (g)": "4.2575",
+            "Processes": "boil||crush||stir||blend||taste",
+            "vegan": "0.0",
+            "pescetarian": "0.0",
+            "ovo_vegetarian": "0.0",
+            "lacto_vegetarian": "0.0",
+            "ovo_lacto_vegetarian": "0.0"
+        },
+        {
+            "_id": "640572c5a13d0d2d358a1aa4",
+            "Recipe_id": "100002",
+            "Calories": "467.6",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "4",
+            "Recipe_title": "Heirloom Tomato Salad With Goat Cheese and Arugula",
+            "total_time": "10",
+            "url": "http://www.geniuskitchen.com/recipe/heirloom-tomato-salad-with-goat-cheese-and-arugula-98116",
+            "Region": "South American",
+            "Sub_region": "Argentine",
+            "Continent": "Latin American",
+            "Source": "Geniuskitchen",
+            "img_url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/98/11/6/picSrNuGL.jpg",
+            "Carbohydrate, by difference (g)": "57.1692",
+            "Energy (kcal)": "659.2041",
+            "Protein (g)": "51.297",
+            "Total lipid (fat) (g)": "30.5773",
+            "Processes": "slice||season||drizzle||press||place||place||top||garnish",
+            "vegan": "0.0",
+            "pescetarian": "0.0",
+            "ovo_vegetarian": "0.0",
+            "lacto_vegetarian": "1.0",
+            "ovo_lacto_vegetarian": "0.0"
+        },
+        {
+            "_id": "640572c5a13d0d2d358a1aa5",
+            "Recipe_id": "100003",
+            "Calories": "297.1",
+            "cook_time": "0",
+            "prep_time": "0",
+            "servings": "1",
+            "Recipe_title": "Heirloom Tomato Sandwich With Basil Mayo",
+            "total_time": "20",
+            "url": "http://www.geniuskitchen.com/recipe/heirloom-tomato-sandwich-with-basil-mayo-308038",
+            "Region": "South American",
+            "Sub_region": "Argentine",
+            "Continent": "Latin American",
+            "Source": "Geniuskitchen",
+            "img_url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/30/80/38/pic0e45os.jpg",
+            "Carbohydrate, by difference (g)": "0.064",
+            "Energy (kcal)": "512.0186",
+            "Protein (g)": "89.8816",
+            "Total lipid (fat) (g)": "14.27",
+            "Processes": "slice||mix||chill||spread||add||slice",
+            "vegan": "0.0",
+            "pescetarian": "0.0",
+            "ovo_vegetarian": "0.0",
+            "lacto_vegetarian": "0.0",
+            "ovo_lacto_vegetarian": "0.0"
+        }
+    ]
+  ```
+
+**Error Responses:**
+1. **Database error:**
+   - **Status Code:** `500 Bad Request`
+   - **Response Body:**
+     ```json
+     {
+         "success": false,
+          "message": "No recipes found in the specified carbohydrate range"
+     }
+     ```
+
+2. **No Recipes Found:**
+   - **Status Code:** `200 ok`
+   - **Response Body:**
+     ```json
+     {
+       "message": "No recipes found in the specified range."
+     }
+     ```
+**Response Time**
+   `2.71s` 
+
+
 
 
 
