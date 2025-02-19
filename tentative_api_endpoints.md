@@ -5566,7 +5566,363 @@
 **Response Time**
    `2.71s` 
 
+### **18. Get Recipe of the day by ingredients (with instructions)**(Implemented)
+
+- **Endpoint:** `GET recipe/recipe-day/with-ingredients`
+
+- **Query Parameters:**
+  - **excludeIngredients** (string, optional): The ingredients to exclude in recipe.
+  - **limit** (integer, Required): The limit of number of responses .
+
+**Sample Request**:  
+`GET /recipe/recipe-day/with-ingredients?excludeIngredients=OnioN,garlic,beef,wateR,chicken,salt&&limit=5`
+
+**Example Response:**
+  ```json
+ "success": "true",
+    "message": "Recipes fetched successfully.",
+    "payload": {
+        "data": [
+            {
+                "_id": "64057301a13d0d2d358a92c8",
+                "Recipe_id": "130778",
+                "Calories": "239.8",
+                "cook_time": "0",
+                "prep_time": "0",
+                "servings": "02-Apr",
+                "Recipe_title": "Boursin Cheese and Sun-Dried Tomato Pizza",
+                "total_time": "15",
+                "url": "http://www.geniuskitchen.com/recipe/boursin-cheese-and-sun-dried-tomato-pizza-380187",
+                "Region": "Italian",
+                "Sub_region": "Italian",
+                "Continent": "European",
+                "Source": "Geniuskitchen",
+                "img_url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/01/87/pic1EF5K5.jpg",
+                "Carbohydrate, by difference (g)": "3.9645",
+                "Energy (kcal)": "18.0",
+                "Protein (g)": "0.8415",
+                "Total lipid (fat) (g)": "0.198",
+                "Utensils": "oven",
+                "Processes": "spread||distribute||chop||crumble||sprinkle||transfer||cook||remove||cut",
+                "vegan": "0.0",
+                "pescetarian": "0.0",
+                "ovo_vegetarian": "0.0",
+                "lacto_vegetarian": "0.0",
+                "ovo_lacto_vegetarian": "0.0",
+                "instructions": "spread pesto sauce over the pizza base . distribute the salami evenly over the pizza . roughly chop the sun dried tomatoes and peppers and distribute evenly over the pizza . crumble the boursin cheese and distribute over the pizza . sprinkle the mozzarella sparingly over the pizza . transfer to the preheated pizza maker machine and cook until the crust is crisp and golden , rotating it 180 degrees half way through cooking to ensure it's cooked evenly . when the pizza is ready , remove , cut into pieces and serve immediately ."
+            },
+            {
+                "_id": "6405723ba13d0d2d358943e6",
+                "Recipe_id": "16570",
+                "Calories": "856.0",
+                "cook_time": "30",
+                "prep_time": "10",
+                "servings": "4",
+                "Recipe_title": "Broccoli and Cheese Mashed Please",
+                "total_time": "50",
+                "url": "http://allrecipes.com/recipe/234782/broccoli-and-cheese-mashed-please/",
+                "Region": "US",
+                "Sub_region": "US",
+                "Continent": "North American",
+                "Source": "AllRecipes",
+                "img_url": "https://images.media-allrecipes.com/userphotos/250x250/1052974.jpg",
+                "Carbohydrate, by difference (g)": "131.8206",
+                "Energy (kcal)": "2725.8691",
+                "Protein (g)": "72.5314",
+                "Total lipid (fat) (g)": "212.4418",
+                "Utensils": "oven",
+                "Processes": "preheat||prepare||mix||fold||top||bake",
+                "vegan": "0.0",
+                "pescetarian": "0.0",
+                "ovo_vegetarian": "0.0",
+                "lacto_vegetarian": "0.0",
+                "ovo_lacto_vegetarian": "0.0",
+                "instructions": "preheat oven to 375 degrees . prepare mashed potatoes following package directions . mix with the mayonnaise and soup . gently fold in the broccoli and half of the cheese . pour into a 9x13 casserole dish and top with remaining cheese and bread crumbs . bake for 30 minutes . let sit for a few minutes before serving ."
+            },
+            {
+                "_id": "64057342a13d0d2d358ad733",
+                "Recipe_id": "148302",
+                "Calories": "101.0",
+                "cook_time": "0",
+                "prep_time": "0",
+                "servings": "18",
+                "Recipe_title": "Sugar Free-Fat Free- Cinnamon Hot Chocolate Mix",
+                "total_time": "10",
+                "url": "http://www.geniuskitchen.com/recipe/sugar-free-fat-free-cinnamon-hot-chocolate-mix-318838",
+                "Region": "Canadian",
+                "Sub_region": "Canadian",
+                "Continent": "North American",
+                "Source": "Geniuskitchen",
+                "img_url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/31/88/38/pictv6CUU.jpg",
+                "Utensils": "container",
+                "Processes": "mix||mix",
+                "vegan": "0.0",
+                "pescetarian": "0.0",
+                "ovo_vegetarian": "0.0",
+                "lacto_vegetarian": "0.0",
+                "ovo_lacto_vegetarian": "0.0",
+                "instructions": "mix all ingredients together and place in an airtight container . to make hot chocolate , use 1/4 c mix and 1 c hot water . number of servings ,"
+            },
+            {
+                "_id": "640572bba13d0d2d3589fbda",
+                "Recipe_id": "92111",
+                "Calories": "70.4",
+                "cook_time": "0",
+                "prep_time": "0",
+                "servings": "18 rum balls",
+                "Recipe_title": "Bacardi Rum Balls",
+                "total_time": "15",
+                "url": "http://www.geniuskitchen.com/recipe/bacardi-rum-balls-373792",
+                "Region": "Caribbean",
+                "Sub_region": "Puerto Rican",
+                "Continent": "Latin American",
+                "Source": "Geniuskitchen",
+                "img_url": "https://geniuskitchen.sndimg.com/gk/img/gk-shareGraphic.png",
+                "Carbohydrate, by difference (g)": "112.544",
+                "Energy (kcal)": "639.1467",
+                "Protein (g)": "9.8933",
+                "Total lipid (fat) (g)": "18.192",
+                "Utensils": "processor||bowl",
+                "Processes": "crush||crush||place||add||roll",
+                "vegan": "0.0",
+                "pescetarian": "0.0",
+                "ovo_vegetarian": "0.0",
+                "lacto_vegetarian": "0.0",
+                "ovo_lacto_vegetarian": "0.0",
+                "instructions": "crush the vanilla wafers using a food processor or if you don't have one , put the wafers in a sealed plastic bag and use a rolling pin to crush finely , no chunks or lumps . crush the nuts using the same process as for wafers . place in a large bowl , add the honey and rum . form into small balls and roll in powdered sugar ."
+            },
+            {
+                "_id": "64057321a13d0d2d358ab658",
+                "Recipe_id": "139885",
+                "Calories": "389.6",
+                "cook_time": "0",
+                "prep_time": "0",
+                "servings": "2",
+                "Recipe_title": "Salmon With Cucumber Salad",
+                "total_time": "20",
+                "url": "http://www.geniuskitchen.com/recipe/salmon-with-cucumber-salad-424050",
+                "Region": "Scandinavian",
+                "Sub_region": "Swedish",
+                "Continent": "European",
+                "Source": "Geniuskitchen",
+                "img_url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/42/40/50/picEcFeZw.jpg",
+                "Carbohydrate, by difference (g)": "5.5288",
+                "Energy (kcal)": "834.8652",
+                "Protein (g)": "180.9131",
+                "Total lipid (fat) (g)": "5.5501",
+                "Utensils": "sieve||plate",
+                "Processes": "scoop||slice||sprinkle||season||steam||cover||rinse||dry||flake||mix||season||serve",
+                "vegan": "0.0",
+                "pescetarian": "0.0",
+                "ovo_vegetarian": "0.0",
+                "lacto_vegetarian": "0.0",
+                "ovo_lacto_vegetarian": "0.0",
+                "instructions": "halve the cucumber lengthways and scoop out the seeds . slice into half moons and put in a sieve , sprinkle with a little salt and leave to drain for 10 minutes . season the salmon fillets and put on a plate . steam for 6 minutes or cover and microwave for 4 minutes or until cooked through . rinse the cucumber and pat dry . flake the salmon , mix with the cucumber , yogurt and dill and season with black pepper . serve with toast ."
+            }
+        ]
+  ```
+
+**Error Responses:**
+1. **Database error:**
+   - **Status Code:** `500 Bad Request`
+   - **Response Body:**
+     ```json
+     {
+         "success": false,
+          "message": "No recipes found in the specified carbohydrate range"
+     }
+     ```
+
+2. **No Recipes Found:**
+   - **Status Code:** `200 ok`
+   - **Response Body:**
+     ```json
+     {
+       "message": "No recipes found."
+     }
+     ```
+**Response Time**
+   `834ms` 
 
 
+### **19. Get Recipe of the day by Category (with instructions)**(Implemented)
 
+- **Endpoint:** `GET /recipe-Day-category`
+
+- **Query Parameters:**
+  - **excludeDietrxCategories** (string, optional): The ingredients to exclude in recipe.
+  - **limit** (integer, Required): The limit of number of responses .
+
+**Sample Request**:  
+`GET /recipe-Day-category?excludeDietrxCategories=Dairy&limit=5`
+
+**Example Response:**
+  ```json
+"success": "true",
+    "message": "Recipes fetched successfully.",
+    "payload": {
+        "data": [
+            {
+                "_id": "6405724aa13d0d2d358957eb",
+                "Recipe_id": "50111",
+                "Calories": "401.0",
+                "cook_time": "0",
+                "prep_time": "0",
+                "servings": "4",
+                "Recipe_title": "Moroccan Rice With Apricots and Pine Nuts",
+                "total_time": "57",
+                "url": "http://www.geniuskitchen.com/recipe/moroccan-rice-with-apricots-and-pine-nuts-446018",
+                "Region": "Northern Africa",
+                "Sub_region": "Moroccan",
+                "Continent": "African",
+                "Source": "Geniuskitchen",
+                "img_url": "https://geniuskitchen.sndimg.com/gk/img/gk-shareGraphic.png",
+                "Carbohydrate, by difference (g)": "558.4538",
+                "Energy (kcal)": "3082.3008",
+                "Protein (g)": "62.4095",
+                "Total lipid (fat) (g)": "65.5836",
+                "Utensils": "bowl||skillet",
+                "Processes": "place||cover||set||chop||set||heat||heat||add||stirring||add||cook||stirring||seasoning||serve",
+                "vegan": "1.0",
+                "pescetarian": "1.0",
+                "ovo_vegetarian": "0.0",
+                "lacto_vegetarian": "0.0",
+                "ovo_lacto_vegetarian": "0.0",
+                "instructions": "place the apricots in a heatproof bowl ; cover them with boiling water and set aside to soften , about 30 minutes . chop and set aside . heat the oil in a skillet over medium heat ; add in the pine nuts , stirring for 2 minutes , or until lightly browned . add in the scallions , rice , reserved apricots , parsley , salt , saffron , cayenne , cardamom , and cumin . cook , stirring until well mixed and heated through , about 10 minutes ; taste and adjust seasonings . serve ."
+            },
+            {
+                "_id": "640572b7a13d0d2d3589f81f",
+                "Recipe_id": "91156",
+                "Calories": "686.8",
+                "cook_time": "0",
+                "prep_time": "0",
+                "servings": "6",
+                "Recipe_title": "My Favorite Souse",
+                "total_time": "480",
+                "url": "http://www.geniuskitchen.com/recipe/my-favorite-souse-207577",
+                "Region": "Caribbean",
+                "Sub_region": "Rest Caribbean",
+                "Continent": "Latin American",
+                "Source": "Geniuskitchen",
+                "img_url": "https://geniuskitchen.sndimg.com/gk/img/gk-shareGraphic.png",
+                "Carbohydrate, by difference (g)": "57.7616",
+                "Energy (kcal)": "2511.0097",
+                "Protein (g)": "192.04",
+                "Total lipid (fat) (g)": "167.847",
+                "Utensils": "pot||bowl",
+                "Processes": "place||cover||cook||remove||drain||marinate||serve",
+                "vegan": "0.0",
+                "pescetarian": "0.0",
+                "ovo_vegetarian": "0.0",
+                "lacto_vegetarian": "0.0",
+                "ovo_lacto_vegetarian": "0.0",
+                "instructions": "place the cut up meat in a large pot . cover with salted water . cook over medium heat until the meat is tender . remove the meat from the water , rinse in cold water , and drain . in a large bowl combine the cooked meat , garlic , onion , pepper , lime juice , water , salt , cucumbers , parsley and ground pepper . marinate for at least 6 hours . serve cold ."
+            },
+            {
+                "_id": "64057331a13d0d2d358ac900",
+                "Recipe_id": "144665",
+                "Calories": "41.3",
+                "cook_time": "0",
+                "prep_time": "0",
+                "servings": "6",
+                "Recipe_title": "Cauliflower in a Coat (Dressed)",
+                "total_time": "20",
+                "url": "http://www.geniuskitchen.com/recipe/cauliflower-in-a-coat-dressed-24847",
+                "Region": "Canadian",
+                "Sub_region": "Canadian",
+                "Continent": "North American",
+                "Source": "Geniuskitchen",
+                "img_url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/24/84/7/picihcmRb.jpg",
+                "Carbohydrate, by difference (g)": "5.7916",
+                "Energy (kcal)": "208.565",
+                "Protein (g)": "2.2757",
+                "Total lipid (fat) (g)": "20.6184",
+                "Processes": "steam||whisk||serve",
+                "vegan": "0.0",
+                "pescetarian": "0.0",
+                "ovo_vegetarian": "0.0",
+                "lacto_vegetarian": "0.0",
+                "ovo_lacto_vegetarian": "0.0",
+                "instructions": "steam the cauliflower until tender . whisk together the remaining ingredients . pour the dressing over the cauliflower& serve ."
+            },
+            {
+                "_id": "640572afa13d0d2d3589f3b5",
+                "Recipe_id": "90023",
+                "Calories": "567.3",
+                "cook_time": "0",
+                "prep_time": "0",
+                "servings": "6",
+                "Recipe_title": "Jamaican Me Crazy Burgers",
+                "total_time": "75",
+                "url": "http://www.geniuskitchen.com/recipe/jamaican-me-crazy-burgers-220999",
+                "Region": "Caribbean",
+                "Sub_region": "Rest Caribbean",
+                "Continent": "Latin American",
+                "Source": "Geniuskitchen",
+                "img_url": "https://geniuskitchen.sndimg.com/gk/img/gk-shareGraphic.png",
+                "Carbohydrate, by difference (g)": "46.4749",
+                "Energy (kcal)": "2047.7155",
+                "Protein (g)": "140.6289",
+                "Total lipid (fat) (g)": "144.0984",
+                "Utensils": "bowl||skillet",
+                "Processes": "prepare||cover||stir||cover||refrigerate||serve||place||cook||stirring||remove||heat||stir||cover||refrigerate||handle||place||cover||cook||place||assemble||spread||place||add||serve",
+                "vegan": "0.0",
+                "pescetarian": "0.0",
+                "ovo_vegetarian": "0.0",
+                "lacto_vegetarian": "0.0",
+                "ovo_lacto_vegetarian": "0.0",
+                "instructions": "prepare a medium hot fire in a charcoal grill with a cover , or preheat a gas grill to med high . make the mayonnaise , combine all the coconut mayonnaise ingredients in a bowl ; stir to combine ; cover and refrigerate until ready to serve . make the chutney , combine the duck sauce , salsa , and banana in an 8 inch fire proof skillet ; place on the grill rack and cook , stirring , until thickened—about 5 minutes . remove from heat , stir in the chopped tomatoes , cover , and refrigerate until serving . make the patties , combine the beef , bell pepper , green onion , soy sauce , allspice , thyme , and cayenne . handle as little as possible but combine mixture well . divide mixture into 6 equal portions ; form into patties to fit rolls . when the grill is ready , brush grill rack with oil ; place the patties on the rack , cover , and cook , turning once , until done to preference—5 7 minutes on each side for medium . during the last few minutes of cooking , place the rolls , cut side down , on the outer edges of the rack to toast lightly . assemble burgers , spread mayonnaise over the cut sides of the roll tops ; on each roll bottom , place ½ cup watercress , a patty , and an equal portion of the chutney ; add the roll tops and serve ."
+            },
+            {
+                "_id": "640572b3a13d0d2d3589f5cb",
+                "Recipe_id": "90557",
+                "Calories": "267.3",
+                "cook_time": "0",
+                "prep_time": "0",
+                "servings": "4",
+                "Recipe_title": "Ginger, Lemon and Garlic Swordfish Steak.",
+                "total_time": "31",
+                "url": "http://www.geniuskitchen.com/recipe/ginger-lemon-and-garlic-swordfish-steak-233844",
+                "Region": "Caribbean",
+                "Sub_region": "Rest Caribbean",
+                "Continent": "Latin American",
+                "Source": "Geniuskitchen",
+                "img_url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/23/38/44/zbaEuKY4T5OI5vmo2m7c_263-grilled-swordfish.jpg",
+                "Carbohydrate, by difference (g)": "0.4116",
+                "Energy (kcal)": "1853.8311",
+                "Protein (g)": "359.0894",
+                "Total lipid (fat) (g)": "36.0799",
+                "Utensils": "bowl",
+                "Processes": "place||mix||add||mix||add||coat||preheat||remove||drizzle||serve",
+                "vegan": "0.0",
+                "pescetarian": "1.0",
+                "ovo_vegetarian": "0.0",
+                "lacto_vegetarian": "0.0",
+                "ovo_lacto_vegetarian": "0.0",
+                "instructions": "place ginger and garlic in a small bowl and mix together to form a paste . add the lemon juice , spring onions , chili and oil , then mix again . add swordfish steaks and coat well with the mixture . leave to marinate for 15 minutes . preheat grill to high . remove fish from marinade and place on grill rack . grill for 5 6 minutes , turning once . drizzle with remaining marinade and serve with new potatoes , lime wedges and mixed salad ."
+            }
+        ]
+  ```
+
+**Error Responses:**
+1. **Database error:**
+   - **Status Code:** `500 Bad Request`
+   - **Response Body:**
+     ```json
+     {
+         "success": false,
+          "message": "No recipes found in the specified carbohydrate range"
+     }
+     ```
+
+2. **No Recipes Found:**
+   - **Status Code:** `200 ok`
+   - **Response Body:**
+     ```json
+     {
+       "message": "No recipes found."
+     }
+     ```
+**Response Time**
+   `1.10s` 
 
